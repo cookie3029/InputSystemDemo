@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 9e52c160328d68b4799c73e4e5cd0ed7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 46f4abf23171983419b0e5361d6c21ec, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -549,7 +553,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    m_Reference: {fileID: 6801592971177477125, guid: fcf9c88b2a7d2314da0019b23f1da47e, type: 3}
   attackAction:
     m_UseReference: 1
     m_Action:
@@ -561,7 +565,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    m_Reference: {fileID: 1380305703291184843, guid: fcf9c88b2a7d2314da0019b23f1da47e, type: 3}
 --- !u!4 &1265405483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400120, guid: 9e52c160328d68b4799c73e4e5cd0ed7, type: 3}

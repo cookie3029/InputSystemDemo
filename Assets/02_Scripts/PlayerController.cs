@@ -12,6 +12,11 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveInput;
 
+    private Animator animator;
+
+    private int HashMovement = Animator.StringToHash("Movement");
+    private int HashAttack = Animator.StringToHash("Attack");
+
     void OnEnable()
     {
         moveAction.action.performed += (ctx) =>
@@ -26,12 +31,13 @@ public class PlayerController : MonoBehaviour
 
         attackAction.action.performed += _ =>
         {
-            Debug.Log("공격");
+            animator.SetTrigger(HashAttack);
         };
     }
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         cinemachineCamera = GameObject.Find("CinemachineCamera").GetComponent<CinemachineCamera>();
     }
@@ -55,10 +61,14 @@ public class PlayerController : MonoBehaviour
 
         moveDir.Normalize();
 
-        // 회전 처리
-        transform.rotation = Quaternion.LookRotation(moveDir);
+        if (moveDir != Vector3.zero)
+        {
+            // 회전 처리
+            transform.rotation = Quaternion.LookRotation(moveDir);
+        }
 
         // 이동 처리
         controller.Move(moveDir * Time.deltaTime * 8.0f);
+        animator.SetFloat(HashMovement, controller.velocity.magnitude);
     }
 }
